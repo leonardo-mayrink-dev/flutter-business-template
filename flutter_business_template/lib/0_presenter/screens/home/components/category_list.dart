@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_business_template/1_domain/0_entities/category.dart';
 import 'package:flutter_business_template/3_shared/constants.dart';
 import 'package:flutter_business_template/3_shared/screen_config.dart';
 
@@ -12,24 +13,94 @@ class CategoryList extends StatefulWidget {
 class _CategoryListState extends State<CategoryList> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: ScreenConfig.screenWidth,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 8, bottom: 8),
-            child: SizedBox(
-              height: 15,
-              width: 15,
-              child: CircularProgressIndicator(
-                valueColor: new AlwaysStoppedAnimation<Color>(kPrimaryColor),
-              ),
+    return Row(crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
+      GestureDetector(
+          onTap: () {},
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+            child: Column(
+              children: <Widget>[
+                Text(
+                  categoryList[0].categoryName,
+                  style: categoryList[0].isActive
+                      ? TextStyle(
+                          color: kTextColor,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold)
+                      : TextStyle(fontSize: 14),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 5),
+                  height: 3,
+                  width: 22,
+                  decoration: BoxDecoration(
+                    color: categoryList[1].isActive
+                        ? kPrimaryColor
+                        : Colors.transparent,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ],
             ),
-          ),
-        ],
-      ),
-    );
+          )),
+      GestureDetector(
+          onTap: () {},
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+            child: Column(
+              children: <Widget>[
+                Text(
+                  categoryList[2].categoryName,
+                  style: categoryList[2].isActive
+                      ? TextStyle(
+                          color: kTextColor,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold)
+                      : TextStyle(fontSize: 14),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 5),
+                  height: 3,
+                  width: 22,
+                  decoration: BoxDecoration(
+                    color: categoryList[1].isActive
+                        ? kPrimaryColor
+                        : Colors.transparent,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ],
+            ),
+          )),
+      GestureDetector(
+          onTap: () {},
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+            child: Column(
+              children: <Widget>[
+                Text(
+                  categoryList[2].categoryName,
+                  style: categoryList[2].isActive
+                      ? TextStyle(
+                          color: kTextColor,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold)
+                      : TextStyle(fontSize: 14),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 5),
+                  height: 3,
+                  width: 22,
+                  decoration: BoxDecoration(
+                    color: categoryList[1].isActive
+                        ? kPrimaryColor
+                        : Colors.transparent,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ],
+            ),
+          )),
+    ]);
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_business_template/0_presenter/screens/home/components/category_list.dart';
+import 'package:flutter_business_template/0_presenter/screens/home/components/item_card.dart';
+import 'package:flutter_business_template/0_presenter/screens/mainScreen/components/item_card.dart';
 import 'package:flutter_business_template/1_domain/0_entities/category.dart';
 import 'package:flutter_business_template/3_shared/constants.dart';
 
@@ -60,39 +62,10 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
         body: SingleChildScrollView(
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-              GestureDetector(
-                  onTap: () {},
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 15),
-                    child: Column(
-                      children: <Widget>[
-                        Text(
-                          categoryList[1].categoryName,
-                          style: categoryList[1].isActive
-                              ? TextStyle(
-                                  color: kTextColor,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold)
-                              : TextStyle(fontSize: 14),
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          height: 3,
-                          width: 22,
-                          decoration: BoxDecoration(
-                            color: categoryList[1].isActive
-                                ? kPrimaryColor
-                                : Colors.transparent,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                      ],
-                    ),
-                  )),
-            ])));
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          CategoryList(),
+          ItemCardd(),
+        ])));
   }
 }
